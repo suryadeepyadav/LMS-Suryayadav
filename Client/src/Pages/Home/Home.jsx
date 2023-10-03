@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getDashboardData } from "../../Redux/dashboard/action";
@@ -9,33 +9,34 @@ import SalesDiv from "../../Components/SalesDiv/SalesDiv";
 import Header from "../../Components/Header/Header";
 
 // Icons import
-import { PiKeyReturnThin, PiCurrencyCircleDollarLight } from "react-icons/pi";
+import { PiKeyReturnThin } from "react-icons/pi";
 import { FiShoppingCart } from "react-icons/fi";
-import { LiaHandHoldingUsdSolid } from "react-icons/lia";
-import { BsTruck, BsClipboardMinus, BsDownload } from "react-icons/bs";
+// import { LiaHandHoldingUsdSolid } from "react-icons/lia";
+import { BsTruck, BsClipboardMinus } from "react-icons/bs";
 import { AiOutlineTag, AiOutlineLineChart } from "react-icons/ai";
-import {
-  BarChart,
-  Bar,
-  ReferenceLine,
-  XAxis,
-  Legend,
-  ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell,
-} from "recharts";
+// import {
+//   BarChart, , BsDownload
+//, PiCurrencyCircleDollarLight
+//   Bar,
+//   ReferenceLine,
+//   XAxis,
+//   Legend,
+//   ResponsiveContainer,
+//   PieChart,
+//   Pie,
+//   Cell,
+// } from "recharts";
 
 //CSS imports
 import "react-vertical-timeline-component/style.min.css";
-import { Tooltip } from "antd";
+// import { Tooltip } from "antd";
 import "./Home.css";
 
 //Image imports
 import demo from "../../Assets/cartoon.svg";
 
 //Data imports
-import { barData, pieData, COLORS } from "../../data.js";
+// import { barData, pieData, COLORS } from "../../data.js";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -120,7 +121,7 @@ const Home = () => {
           </div>
 
           {/* Bar nd Pie Chart */}
-          <div className="charts">
+          {/* <div className="charts">
             <div className="lineChart">
               <div className="chartHead">
                 <p>Premium Balance</p>
@@ -198,7 +199,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="homeFooter">
             Copyright 2023 © LMS created by Piyush Agrawal
           </div>
