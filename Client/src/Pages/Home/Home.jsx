@@ -103,7 +103,7 @@ const Home = () => {
           <div className="overview">
             <div className="overview-left">
               <div>
-                <h2> Welcome to LMS</h2>
+                <h2> Welcome to SIIT</h2>
                 <p>Here whats happing in your account today</p>
               </div>
               <div>
