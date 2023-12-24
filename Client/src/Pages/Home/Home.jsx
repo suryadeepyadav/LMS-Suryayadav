@@ -57,7 +57,7 @@ const Home = () => {
     },
     {
       icon: <PiKeyReturnThin />,
-      title: "Tutors",
+      title: "Teachers",
       number: dashboard?.tutors?.length || 0,
     },
     {
@@ -104,12 +104,13 @@ const Home = () => {
             <div className="overview-left">
               <div>
                 <h2> Welcome to SIIT</h2>
-                <p>Here whats happing in your account today</p>
+                <p>Here is an overview of the account activity for today</p>
               </div>
               <div>
                 <button>Whats New !</button>
               </div>
-              <img src={demo} alt="" />
+              {/* <img src={demo} alt="" /> */}
+              {/* <img src="https://img.freepik.com/free-photo/cute-freelance-girl-using-laptop-sitting-floor-smiling_176420-20221.jpg?w=1060&t=st=1696772028~exp=1696772628~hmac=7c7158a3395b5afb2eaf38e2d006b468477c03848a07e696af805331cf8a1d5e" alt="" /> */}
             </div>
             <div className="overview-right">
               {overviewData?.map(({ icon, title, number }, i) => {
@@ -201,7 +202,7 @@ const Home = () => {
             </div>
           </div> */}
           <div className="homeFooter">
-            Copyright 2023 © LMS created by Piyush Agrawal
+            Copyright 2023 © SIIT created by Suryadeep yadav
           </div>
         </div>
       </Navbar>

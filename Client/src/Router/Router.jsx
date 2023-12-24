@@ -1,8 +1,11 @@
-import React from "react";
+// import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
+import AdminRegistration from "../Pages/Login/AdminRegistration";
 import Admin from "../Pages/Admin/Admin";
+import Youtube from "../Pages/Youtube/Youtube";
+import About from "../Pages/Youtube/About";
 import Tutor from "../Pages/Tutor/Tutor";
 import Student from "../Pages/Student/Student";
 import Quizzes from "../Pages/Quizzes/Quizzes";
@@ -17,6 +20,7 @@ const Router = () => {
     <div>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/AdminRegistration" element={<AdminRegistration />} />
         <Route path="/home" element={<Home />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/tutor" element={<Tutor />} />
@@ -26,6 +30,8 @@ const Router = () => {
         <Route path="/content/:id" element={<SingleContent />} />
         <Route path="/contents" element={<Content />} />
         <Route path="/doubts" element={<Doubts />} />
+        <Route path="/youtube" element={<Youtube />} />
+        <Route path="/about" element={<About />} />
         <Route path="/doubt/:id" element={<SingleDoubt />} />
         <Route path="*" element={<Home />} />
       </Routes>

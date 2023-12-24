@@ -47,7 +47,7 @@ const TutorRow = ({ data }) => {
       <td>{data.name}</td>
       <td>{data.email}</td>
       <td>{data.subject}</td>
-      <td style={{ color: data.access == "true" ? "Green" : "Red" }}>
+      <td style={{ color: data.access == "true" ? "Blue" : "Red" }}>
         {data.access == "true" ? <AiFillEye /> : <AiFillEyeInvisible />}
       </td>
       <td onClick={showModal}>Edit</td>
@@ -73,13 +73,13 @@ const TutorRow = ({ data }) => {
             <option value={"false"}>Disallow</option>
           </select>
           <select name="subject" onChange={(e) => handleAdminDataChange(e)}>
-            <option value="">Choose Subject</option>
-            <option value="Maths">Maths</option>
-            <option value="Physics">Physics</option>
-            <option value="Chemistry">Chemistry</option>
-            <option value="Biology">Biology</option>
-            <option value="Political science">Political science</option>
-            <option value="History">History</option>
+          <option value="">Choose Subject</option>
+            <option value="Java">Java</option>
+            <option value="Language">C Language</option>
+            <option value="Python">Python</option>
+            <option value="Php">Php</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="React">React</option>
           </select>
           <input type="submit" value="Edit" />
         </form>

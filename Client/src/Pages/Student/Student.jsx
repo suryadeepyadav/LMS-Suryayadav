@@ -176,15 +176,15 @@ const Student = () => {
               onChange={(e) => handleInputChange(e)}
             />
             <select name="class" onChange={(e) => handleInputChange(e)}>
-              <option value="">Choose Class</option>
-              <option value={5}>5</option>
-              <option value={6}>6</option>
-              <option value={7}>7</option>
-              <option value={8}>8</option>
-              <option value={9}>9</option>
-              <option value={10}>10</option>
+            <option value="">Choose Course</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Core Java">Core Java</option>
+            <option value="Dsa">Dsa</option>
+            <option value="C Language">C Language</option>
+            <option value="Python">Python</option>
+            <option value="Php">Php</option>
             </select>
-            <input type="submit" value="Add Tutor" />
+            <input type="submit" value="Add Student" />
           </form>
           {loading ? (
             <Space

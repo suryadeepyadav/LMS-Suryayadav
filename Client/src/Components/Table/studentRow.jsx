@@ -48,7 +48,7 @@ const StudentRow = ({ data }) => {
       <td>{data.name}</td>
       <td>{data.email}</td>
       <td>{data.class}</td>
-      <td style={{ color: data.access == "true" ? "Green" : "Red" }}>
+      <td style={{ color: data.access == "true" ? "Blue" : "Red" }}>
         {data.access == "true" ? <AiFillEye /> : <AiFillEyeInvisible />}
       </td>
       <td onClick={showModal}>Edit</td>
@@ -74,13 +74,13 @@ const StudentRow = ({ data }) => {
             <option value={"false"}>Disallow</option>
           </select>
           <select name="class" onChange={(e) => handleAdminDataChange(e)}>
-            <option value="">Choose Class</option>
-            <option value={5}>5</option>
-            <option value={6}>6</option>
-            <option value={7}>7</option>
-            <option value={8}>8</option>
-            <option value={9}>9</option>
-            <option value={10}>10</option>
+          <option value="">Choose Course</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Core Java">Core Java</option>
+            <option value="Dsa">Dsa</option>
+            <option value="C Language">C Language</option>
+            <option value="Python">Python</option>
+            <option value="Php">Php</option>
           </select>
           <input type="submit" value="Edit" />
         </form>

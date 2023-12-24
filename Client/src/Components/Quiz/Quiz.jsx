@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteQuiz } from "../../Redux/quiz/action";
 import "./Quiz.css";
@@ -13,7 +13,10 @@ const Quiz = ({ data }) => {
   const deleteQuizFunc = (id) => {
     dispatch(deleteQuiz(id));
   };
-
+  const handleStartQuiz = (id) => {
+    // dispatch(deleteQuiz(id));
+    console.log(id)
+  };
   return (
     <div className="quizDiv">
       <div>
@@ -37,7 +40,7 @@ const Quiz = ({ data }) => {
               Delete Quiz
             </button>
           ) : (
-            <button className="startQuiz">Start Quiz</button>
+            <button className="startQuiz" onClick={handleStartQuiz(data.id)}>Start Quiz</button>
           )}
         </div>
       </div>

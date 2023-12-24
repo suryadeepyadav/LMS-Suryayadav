@@ -48,7 +48,7 @@ const TableRow = ({ data }) => {
     <tr className="tableRow">
       <td>{data.name}</td>
       <td>{data.email}</td>
-      <td style={{ color: data.access == "true" ? "Green" : "Red" }}>
+      <td style={{ color: data.access == "true" ? "Blue" : "Red" }}>
         {data.access == "true" ? <AiFillEye /> : <AiFillEyeInvisible />}
       </td>
       <td onClick={showModal}>Edit</td>

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Navigate, useNavigate,Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { adminLogin, studentLogin, tutorLogin } from "../../Redux/auth/action";
 
@@ -145,7 +145,7 @@ const Login = () => {
       <div className="loginContainer">
         <div className="loginImage">
           <img
-            src="https://img.freepik.com/free-vector/tablet-login-concept-illustration_114360-7863.jpg"
+            src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg?w=740&t=st=1696771741~exp=1696772341~hmac=e55c526abc72022ea36b873f8775bf6d3df0ff440f65b67da7656a78f9a39f21"
             alt=""
           />
         </div>
@@ -180,9 +180,10 @@ const Login = () => {
                 placeholder="Enter password"
               />
               <button type="submit">CONTINUE</button>
-              {/* <button type="submit">Register</button> */}
+
             </form>
-            <button type="submit">Register</button>
+            {/* <button onClick={<Navigate to="/AdminRegistration" />}>Register</button> */}
+            {/* <Link to="/AdminRegistration">Register Admin</Link> */}
           </div>
         </div>
       </div>

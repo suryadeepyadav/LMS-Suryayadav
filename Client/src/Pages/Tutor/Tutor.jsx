@@ -111,7 +111,7 @@ const Tutor = () => {
   return (
     <Navbar>
       <div className="admin">
-        <Header Title={"Tutor Data"} Address={"Tutor"} />
+        <Header Title={"Teacher Data"} Address={"Teacher"} />
         <div className="adminData">
           <section className="tableBody">
             <table>
@@ -175,15 +175,15 @@ const Tutor = () => {
               onChange={(e) => handleInputChange(e)}
             />
             <select name="subject" onChange={(e) => handleInputChange(e)}>
-              <option value="">Choose Subject</option>
-              <option value="Maths">Maths</option>
-              <option value="Physics">Physics</option>
-              <option value="Chemistry">Chemistry</option>
-              <option value="Biology">Biology</option>
-              <option value="Political science">Political science</option>
-              <option value="History">History</option>
+            <option value="">Choose Subject</option>
+            <option value="Java">Java</option>
+            <option value="Language">C Language</option>
+            <option value="Python">Python</option>
+            <option value="Php">Php</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="React">React</option>
             </select>
-            <input type="submit" value="Add Tutor" />
+            <input type="submit" value="Add Teacher" />
           </form>
           {loading ? (
             <Space

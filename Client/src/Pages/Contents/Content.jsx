@@ -87,7 +87,7 @@ const Content = () => {
         onClose();
         return messageApi.open({
           type: "info",
-          content: "Quiz Created",
+          content: "Contents Created",
           duration: 3,
         });
       }
@@ -155,7 +155,7 @@ const Content = () => {
 
         {/* create content drawer */}
         <Drawer
-          title="Create a new account"
+          title="Create a new contents"
           width={720}
           onClose={onClose}
           open={open}
@@ -175,22 +175,22 @@ const Content = () => {
               onChange={(e) => handleFormChange(e)}
             />
             <select name="class" onChange={(e) => handleFormChange(e)}>
-              <option value="">Choose Class</option>
-              <option value={5}>5</option>
-              <option value={6}>6</option>
-              <option value={7}>7</option>
-              <option value={8}>8</option>
-              <option value={9}>9</option>
-              <option value={10}>10</option>
+            <option value="">Choose Course</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Core Java">Core Java</option>
+            <option value="Dsa">Dsa</option>
+            <option value="C Language">C Language</option>
+            <option value="Python">Python</option>
+            <option value="Php">Php</option>
             </select>
             <select name="subject" onChange={(e) => handleFormChange(e)}>
-              <option value="">Choose Subject</option>
-              <option value="Maths">Maths</option>
-              <option value="Physics">Physics</option>
-              <option value="Chemistry">Chemistry</option>
-              <option value="Biology">Biology</option>
-              <option value="Political science">Political science</option>
-              <option value="History">History</option>
+            <option value="">Choose Subject</option>
+            <option value="Java">Java</option>
+            <option value="Language">C Language</option>
+            <option value="Python">Python</option>
+            <option value="Php">Php</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="React">React</option>
             </select>
             <select name="type" onChange={(e) => handleFormChange(e)}>
               <option value="">Choose Content Type</option>

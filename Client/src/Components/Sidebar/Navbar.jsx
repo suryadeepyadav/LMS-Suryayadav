@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authLogout } from "../../Redux/auth/action";
@@ -17,7 +17,7 @@ import { PiStudentDuotone } from "react-icons/pi";
 import { HiOutlineHome } from "react-icons/hi";
 import { GoChevronDown } from "react-icons/go";
 import { RiAdminLine } from "react-icons/ri";
-import { AiOutlineQuestion } from "react-icons/ai";
+import { AiOutlineQuestion ,AiFillYoutube, AiFillInfoCircle  } from "react-icons/ai";
 
 // CSS imports
 import "./Navbar.css";
@@ -43,27 +43,33 @@ const Navbar = ({ children }) => {
   const adminData = [
     { icon: <HiOutlineHome />, title: "Dashboard", address: "/home" },
     { icon: <RiAdminLine />, title: "Admins", address: "/admin" },
-    { icon: <BiUserVoice />, title: "Tutors", address: "/tutor" },
+    { icon: <BiUserVoice />, title: "Teachers", address: "/tutor" },
     { icon: <PiStudentDuotone />, title: "Students", address: "/student" },
     { icon: <TbBrandSpeedtest />, title: "Quizzes", address: "/quizzes" },
+    { icon: <AiFillYoutube />, title: "Youtube", address: "https://www.youtube.com/@syvsolution1012/playlists" },
+    { icon: <AiFillInfoCircle />, title: "About", address: "/about" },
     { icon: <TbLayoutGridAdd />, title: "Contents", address: "/contents" },
-    { icon: <TbUsers />, title: "Leader Board", address: "/leaderboard" },
+    // { icon: <TbUsers />, title: "Leader Board", address: "/leaderboard" },
   ];
   const studentData = [
     { icon: <HiOutlineHome />, title: "Dashboard", address: "/home" },
     { icon: <TbBrandSpeedtest />, title: "Quizzes", address: "/quizzes" },
     { icon: <TbLayoutGridAdd />, title: "Contents", address: "/contents" },
     { icon: <AiOutlineQuestion />, title: "Doubts", address: "/doubts" },
+    { icon: <AiFillYoutube />, title: "Youtube", address: "https://www.youtube.com/@syvsolution1012/playlists" },
+    { icon: <AiFillInfoCircle />, title: "About", address: "/about" },
     // { icon: <TbMessages />, title: "Message", address: "/messages" },
-    { icon: <TbUsers />, title: "Leader Board", address: "/leaderboard" },
+    // { icon: <TbUsers />, title: "Leader Board", address: "/leaderboard" },
     // { icon: <BsBookmarkCheck />, title: "Bookmarks", address: "/bookmarks" },
   ];
   const tutorData = [
     { icon: <HiOutlineHome />, title: "Dashboard", address: "/home" },
     { icon: <PiStudentDuotone />, title: "Students", address: "/student" },
     { icon: <TbBrandSpeedtest />, title: "Quizzes", address: "/quizzes" },
+    { icon: <AiFillYoutube />, title: "Youtube", address: "https://www.youtube.com/@syvsolution1012/playlists" },
+    { icon: <AiFillInfoCircle />, title: "About", address: "/about" },
     { icon: <TbLayoutGridAdd />, title: "Contents", address: "/contents" },
-    { icon: <TbUsers />, title: "Leader Board", address: "/leaderboard" },
+    // { icon: <TbUsers />, title: "Leader Board", address: "/leaderboard" },
     { icon: <AiOutlineQuestion />, title: "Doubts", address: "/doubts" },
     // { icon: <TbMessages />, title: "Message", address: "/messages" },
   ];
@@ -159,7 +165,7 @@ const Navbar = ({ children }) => {
             {userType == "Student" ? (
               premium == "false" ? (
                 <Link href="/" className="nav-link">
-                  🔥 Access all features with premium ! <span>Buy now !</span>
+                  {/* 🔥 Access all features with premium ! <span>Buy now !</span> */}
                 </Link>
               ) : (
                 "🔥You are a premium member !"

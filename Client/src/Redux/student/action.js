@@ -66,6 +66,7 @@ export const deleteStudent = (studentId) => async (dispatch) => {
 
 //edit student
 export const editStudent = (studentId, data) => async (dispatch) => {
+  console.log(studentId)
   try {
     dispatch({ type: types.EDIT_STUDENT_REQUEST });
     const res = await axios.patch(`${url}/student/${studentId}`, {
