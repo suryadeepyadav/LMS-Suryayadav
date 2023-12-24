@@ -6,7 +6,7 @@ const doubtSchema = mongoose.Schema(
     name: String,
     title: String,
     description: String,
-    class: Number,
+    class: String,
     subject: String,
     fileUrl: String,
     fileType: String,

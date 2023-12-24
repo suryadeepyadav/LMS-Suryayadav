@@ -16,64 +16,135 @@ const {
 router.get("/all", async (req, res) => {
   try {
     const admins = await AdminModel.find();
-    res.send({ message: "All admins data", admins });
+    return res.send({ message: "All admins data", admins });
   } catch (error) {
     res.status(400).send({ message: "Something went wrong" });
   }
 });
 
 //admin registration route
+// router.post("/register", isAdminAuthenticated, async (req, res) => {
+//   const { name, email, password } = req.body.data;
+//   try {
+//     let user = await AdminModel.find({ email });
+//     if (user.length > 0) {
+//       return res.send({ msg: "User already registered" });
+//     }
+//     bcrypt.hash(
+//       password,
+//       +process.env.Salt_rounds,
+//       async (err, secure_password) => {
+//         if (err) {
+//           console.log(err);
+//         } else {
+//           const admin = new AdminModel({
+//             name,
+//             email,
+//             password: secure_password,
+//           });
+//           await admin.save();
+//           let newAdmin = await AdminModel.find({ email });
+
+//           const transporter = nodemailer.createTransport({
+//             service: "gmail",
+//             auth: {
+//               user: "suryayadav1012002@gmail.com",
+//               pass: "nsziioprjzwcodlm",
+//             },
+//           });
+
+//           const mailOptions = {
+//             from: "suryayadav1012002@gmail.com",
+//             to: email,
+//             subject: "Account ID and Password",
+//             text: `Welcome to SIIT, Congratulations,Your account has been created successfully.This is your User type : Admin and Password : ${password}  `,
+//           };
+
+//           transporter.sendMail(mailOptions, (error, info) => {
+//             if (error) {
+//               return res.send({ msg: "error" });
+//             }
+//             return res.send({ msg: "Password sent" });
+//           });
+
+//           res.send({
+//             msg: "Admin Registered Successfully",
+//             admin: newAdmin[0],
+//           });
+//         }
+//       }
+//     );
+//   } catch (err) {
+//     res.status(404).send({ msg: "Admin Registration failed" });
+//   }
+// });
 router.post("/register", isAdminAuthenticated, async (req, res) => {
   const { name, email, password } = req.body.data;
   try {
-    let user = await AdminModel.find({ email });
-    if (user.length > 0) {
+    const user = await AdminModel.findOne({ email });
+    if (user) {
       return res.send({ msg: "User already registered" });
     }
-    bcrypt.hash(
-      password,
-      +process.env.Salt_rounds,
-      async (err, secure_password) => {
-        if (err) {
-          console.log(err);
-        } else {
-          const admin = new AdminModel({
-            name,
-            email,
-            password: secure_password,
-          });
-          await admin.save();
-          let newAdmin = await AdminModel.find({ email });
 
-          const transporter = nodemailer.createTransport({
-            service: "gmail",
-            auth: {
-              user: "agrawaljoy1@gmail.com",
-              pass: "nsziioprjzwcodlm",
-            },
-          });
+    const secure_password = await bcrypt.hash(password, +process.env.Salt_rounds);
 
-          const mailOptions = {
-            from: "agrawaljoy1@gmail.com",
-            to: email,
-            subject: "Account ID and Password",
-            text: `Welcome to LMS, Congratulations,Your account has been created successfully.This is your User type : Admin and Password : ${password}  `,
-          };
+    const admin = new AdminModel({
+      name,
+      email,
+      password: secure_password,
+    });
 
-          transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-              return res.send({ msg: "error" });
-            }
-            res.send({ msg: "Password sent" });
-          });
+    await admin.save();
 
-          res.send({
-            msg: "Admin Registered Successfully",
-            admin: newAdmin[0],
-          });
-        }
+    const newAdmin = await AdminModel.findOne({ email });
+
+    // Email sending code using Nodemailer
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "suryayadav1012002@gmail.com",
+        pass: "nxhv dhlj jpxd ahgv",
+      },
+    });
+
+    const mailOptions = {
+      from: "suryayadav1012002@gmail.com",
+      to: email,
+      subject: "Account ID and Password",
+      text: `Welcome to SIIT, Congratulations, Your account has been created successfully. This is your User type: Admin and Password: ${password}`,
+    };
+    // const mailOptions = {
+    //   from: "suryayadav1012002@gmail.com",
+    //   to: email,
+    //   subject: "Account ID and Password",
+    //   html: `
+    //     <html>
+    //       <body>
+    //         <h1>Welcome to SIIT</h1>
+    //         <p>Congratulations, your account has been successfully created as an Administrator.</p>
+    //         <p>Your login credentials are as follows:</p>
+    //         <ul>
+    //           <li>User Type: Administrator</li>
+    //           <li>Password: ${password}</li>
+    //         </ul>
+    //         <p>Thank you for joining SIIT, where you'll have access to a world of opportunities and resources. We look forward to your active participation and contributions.</p>
+    //       </body>
+    //     </html>
+    //   `,
+    // };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error("Error sending email:", error);
+      } else {
+        console.log("Password sent successfully.");
       }
-    );
+      // Continue with sending the registration success response.
+      res.send({
+        msg: "Admin Registered Successfully",
+        admin: newAdmin,
+      });
+    });
   } catch (err) {
     res.status(404).send({ msg: "Admin Registration failed" });
   }

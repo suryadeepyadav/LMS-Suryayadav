@@ -7,7 +7,7 @@ const quizSchema = mongoose.Schema(
       type: String,
       default: "https://akm-img-a-in.tosshub.com/aajtak/2023-02/quiz_01.png",
     },
-    class: Number,
+    class: String,
     subject: String,
     creator: String,
     noOfQuestions: Number,
