@@ -1,9 +1,11 @@
 # Learning Management system
 
-SIIT is a full-featured, multipurpose, premium Learning Management System built with react js, HTML5, and CSS. It has a huge collection of reusable UI components and is integrated with the latest CSS libraries. It can be used for all types of Web applications like custom admin panel, app backend, CMS or CRM.
+LMS is a full-featured, multipurpose, premium Learning Management System built with react js, HTML5, and CSS. It has a huge collection of reusable UI components and is integrated with the latest CSS libraries. It can be used for all types of Web applications like custom admin panel, app backend, CMS or CRM.
 
 # Installation
-git clone https://github.com/suryadeepyadav/LMS-Suryayadav.git
+
+## Client
+```bash
 cd Client
 ```
 ```bash
@@ -13,7 +15,8 @@ npm i
 npm run dev
 ```
 
-```
+
+## Server
 ```bash
 cd Server
 ```
@@ -42,27 +45,28 @@ Salt_rounds = 5
 - **ExpressJs**
 - **MongoDB**
 
-## Deployment
-- **Client**  - Netlify
-- **Server**  - Render
+## 🔗 Credentials
+
+- Email - vasu@gmail.com
+- Password - vasu
+
 
 ## Features Completed
 
 - Admin can regulate user access to particular data
 - Account credentials are sent over mail once the user account is created
-- Teachers can provide homework, assignment and quizzes to students
+- Tutors can provide homework, assignment and quizzes to students
 - Students can monitor their performance and assess their progress using an LMS.
 - Students can raise doubts
-- Teachers can add responses to doubts
-- Teachers can only administer their own courses
+- Tutors can add responses to doubts
+- Tutors can only administer their own courses
 - Admin can access to manage all courses
 - Leaderboard showing top students with the maximum gaming points
 - LMS can interact with email
 
 ## Features yet to be made
 
-- Private chats between Teachers and students
+- Private chats between tutors and students
 - Setting reminders and notifications
 - Payment systems
-
 
